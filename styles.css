@@ -28,8 +28,8 @@ body {
 }
 h2 {
     color: var(--title);
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 0 var(--background);
+    font-size: 3rem;
+    text-shadow: 3px 3px 0 var(--background);
 }
 /*///////////////////PARALLAX/////////////////*/
 .parallax {
@@ -84,13 +84,15 @@ h2 {
     padding: 3.3rem 1rem;
 }
 .presentation h1 {
-    margin-top: 7rem;
-    font-size: 2rem;
-    margin-bottom: 0;
+    margin: 7rem 0 0.5rem 0;
+    color: var(--title);
+    font-size: 3rem;
+    text-shadow: 3px 3px 0 var(--background);
 }
 .presentation p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    color: var(--title);
+    font-size: 1.5rem;
+    text-shadow: 1.5px 1.5px 0 var(--background);
 }
 .action-button {
     text-decoration: none;
@@ -108,6 +110,10 @@ h2 {
     padding: 1rem;
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
+.services div {
+    display: flex;
+    gap: 1rem;
+}
 .services h2 {
     margin-top: 7rem;
 }
@@ -118,6 +124,8 @@ h2 {
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
 }
 .service-card h3 {
     color: var(--title);
@@ -143,7 +151,10 @@ h2 {
 /*///////////////////WORK///////////////////*/
 .work {
     padding: 1rem;
-
+}
+.work div {
+    display: flex;
+    gap: 1rem;
 }
 .work h2 {
     margin-top: 7rem;
@@ -233,5 +244,12 @@ footer {
         margin-top: 10rem;
         align-self: center;
     }
-
+    /*----------------Services----------------*/
+    .services div {
+        flex-direction: column;
+    }
+    /*----------------Work----------------*/
+    .work div {
+        flex-direction: column;
+    }
 }
