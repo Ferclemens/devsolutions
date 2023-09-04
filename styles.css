@@ -1,15 +1,41 @@
+
 :root {
-    --background: #242629;
-    --backgroundMain: #c1c1c1; 
-    --text: #94a1b2;
-    --button: #2cb67d;
+    --background: #16161a;
+    --secondary: #3f4044;
+    --tertiary: #2cb67d;
+    --button: #7f5af0;
+    --paragraph: #94a1b2;
+    --title: #fffffe;
 }
 body {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    background-color: var(--backgroundMain);
-    font-family: sans-serif;
+    padding: 0; 
+    background: linear-gradient(-90deg, #2aa7a0, #2d9660, #19254d);
+    background-size: 250% 250%;
+    animation: gradient 8s alternate infinite;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;  
+}
+@keyframes gradient {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+}
+h2 {
+    color: var(--title);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 var(--background);
+}
+/*///////////////////PARALLAX/////////////////*/
+.parallax {
+    background: var(--background) fixed no-repeat 50% 50%;
+    background-image: url('./assets/software.png');
+    background-size: cover;
 }
 
 /*///////////////////NAVBAR///////////////////*/
@@ -20,9 +46,11 @@ body {
     right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    align-items: center;
+    padding: 1rem 2rem;
     background-color: var(--background);
-    color: var(--text);
+    color: var(--paragraph);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .logo {
     display: flex;
@@ -41,7 +69,7 @@ body {
 }
 .menu-list a {
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--paragraph);
 }
 .abrir-menu, .cerrar-menu {
     display: none;
@@ -53,11 +81,10 @@ body {
 .presentation {
     display: flex;
     flex-direction: column;
-    margin-top: 8rem;
-    padding: 1rem;
-    background-image: url('./assets/');
+    padding: 3.3rem 1rem;
 }
 .presentation h1 {
+    margin-top: 7rem;
     font-size: 2rem;
     margin-bottom: 0;
 }
@@ -68,34 +95,58 @@ body {
 .action-button {
     text-decoration: none;
     color: var(--background);
-    border: 1px solid var(--button);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     border-radius: 5px;
     padding: 8px 10px;
-    background-color: var(--button);
+    background-color: var(--tertiary);
     width: fit-content;
     cursor: pointer;
+    align-self: flex-end;
 }
 /*///////////////////SERVICES///////////////////*/
 .services {
     padding: 1rem;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+.services h2 {
+    margin-top: 7rem;
 }
 .service-card {
-    border: 2px solid var(--button);
     border-radius: 6px;
-    background-color: var(--background);
-    color: var(--text);
+    background-color: var(--secondary);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
+.service-card h3 {
+    color: var(--title);
+}
+.service-card p {
+    color: var(--paragraph);
+}
 /*///////////////////ABOUT///////////////////*/
-.about-container {
+.about {
     padding: 1rem;
     font-size: 1.2rem;
+    color: var(--background);
+    font-weight: bold;
+}
+.about-box {
+    margin-top: 7rem;
+    margin-bottom: 8rem;
+    border-radius: 4px;
+    background-color: var(--tertiary);
+    padding: 0.5rem 1rem 1rem 1rem;
+    box-shadow: rgba(14, 30, 37, 1) 0px 2px 4px 0px, rgba(14, 30, 37, 0.8) 0px 2px 16px 0px;
 }
 /*///////////////////WORK///////////////////*/
-.work-container {
+.work {
     padding: 1rem;
+
+}
+.work h2 {
+    margin-top: 7rem;
 }
 /* .work-card {
     border: 2px solid var(--button);
@@ -108,19 +159,21 @@ body {
 } */
 /*///////////////////FORM///////////////////*/
 .form-container {
-    padding: 1rem;
+    padding: 10rem 1rem 2.2rem 1rem;
+    
 }
+
 .form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 2px solid var(--button);
     border-radius: 6px;
-    background-color: var(--background);
+    background-color: var(--tertiary);
     color: var(--text);
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    box-shadow: rgba(14, 30, 37, 1) 0px 2px 4px 0px, rgba(14, 30, 37, 0.8) 0px 2px 16px 0px;
 }
 .form input {
     padding: 0.5rem 1rem;
@@ -130,18 +183,19 @@ body {
     align-self: center;
     padding: 0.5rem 1rem;
     border-radius: 6px;
+    background-color: var(--button);
 }
 /*///////////////////FOOTER///////////////////*/
 footer {
     background-color: var(--background);
     font-size: 1rem;
-    color: var(--text);
+    color: var(--paragraph);
     padding: 1rem;
 }
 /*///////////////////////MEDIA QUERIS///////////////////*/
-@media (max-width: 750px) {
+@media (max-width: 735px) {
     
-    /*----------------MENU----------------*/
+    /*----------------Menu----------------*/
     .abrir-menu, .cerrar-menu {
         display: block;
         border: 0;
@@ -170,4 +224,14 @@ footer {
         align-items: center;
         padding: 40px 60px;
     }
+    /*----------------Presentation----------------*/
+    .presentation {
+        padding: 8rem  1rem 20rem 1rem;
+        align-items: center;
+    }
+    .presentation a {
+        margin-top: 10rem;
+        align-self: center;
+    }
+
 }
