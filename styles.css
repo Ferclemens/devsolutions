@@ -213,9 +213,20 @@ h2 {
     overflow: hidden;
     left: 0;
     top: 0;
-    width: 500px;
+    width: 1200px;
+    height: 900px;
+    transform: rotate(50deg) translateY(-50%) translateX(45%) scale(100%);
+    background-color: var(--button);
+}
+.work-triangle2 {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 400px;
     height: 600px;
-    transform: rotate(29deg) translateY(-200px) translateX(50px) scale(100%);
+    transform: rotate(50deg) translateY(20%) translateX(-60%) scale(100%);
     background-color: var(--button);
 }
 /*///////////////////FORM///////////////////*/
@@ -301,5 +312,11 @@ footer {
     /*----------------Work----------------*/
     .work div {
         flex-direction: column;
+    }
+    .work-triangle {
+        width: 700px;
+        height: 800px;
+        transform: rotate(50deg) translateY(30%) translateX(75%) scale(100%);
+        background-color: var(--button);
     }
 }
