@@ -10,6 +10,7 @@
     --paragraph: #94a1b2;
     --title: #fffffe;
     --parallax: url('./assets/software.png');
+    --parallax-pres: url('./assets/deg.svg');
     --font: 'NunitoSans-Black'
 }
 body {
@@ -58,7 +59,6 @@ h2 {
     background-image: var(--parallax);
     background-size: cover;
 }
-
 /*///////////////////NAVBAR///////////////////*/
 .header-container {
     z-index: 1;
@@ -107,6 +107,9 @@ h2 {
     flex-direction: column;
     padding: 3.3rem 1rem;
     overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(22,22,26,1) 0%, rgba(51,51,54,1) 69%);
+    z-index: -2;
 }
   
 .presentation h1 {
@@ -131,7 +134,15 @@ h2 {
     cursor: pointer;
     align-self: flex-end;
 }
-
+.presentation-triangle {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    transform: rotate(-65deg) scale(150%) translateX(58%) translateY(0%);
+    width: 500px;
+    height: 600px;
+    background-color: var(--button);
+}
 /*///////////////////SERVICES///////////////////*/
 .services {
     padding: 1rem;
@@ -168,7 +179,6 @@ h2 {
     width: 900px;
     height: 700px;
     background-color: var(--button);
-
 }
 /*///////////////////ABOUT///////////////////*/
 .about {
@@ -198,15 +208,6 @@ h2 {
 .work h2 {
     margin-top: 7rem;
 }
-/* .work-card {
-    border: 2px solid var(--button);
-    border-radius: 6px;
-    background-color: var(--background);
-    color: var(--text);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-} */
 .work-triangle {
     position: absolute;
     z-index: -1;
@@ -304,6 +305,9 @@ footer {
     .presentation a {
         margin-top: 10rem;
         align-self: center;
+    }
+    .presentation-triangle {
+        transform: rotate(-45deg) scale(150%) translateX(58%) translateY(0%);
     }
     /*----------------Services----------------*/
     .services div {
