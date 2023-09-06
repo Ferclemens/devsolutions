@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'NunitoSans-Black';
+    src: url('./assets/NunitoSans-Black.ttf');
+}
 :root {
     --background: #16161a;
     --secondary: #3f4044;
@@ -6,17 +9,22 @@
     --button: #7f5af0;
     --paragraph: #94a1b2;
     --title: #fffffe;
+    --parallax: url('./assets/software.png');
+    --font: 'NunitoSans-Black'
 }
 body {
     box-sizing: border-box;
     margin: 0;
-    padding: 0; 
+    padding: 0;  
+    font-family: NunitoSans-Black, sans-serif;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+.gradient {
     background: linear-gradient(-90deg, #2aa7a0, #2d9660, #19254d);
     background-size: 250% 250%;
     animation: gradient 8s alternate infinite;
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;  
 }
 @keyframes gradient {
     0% {
@@ -31,15 +39,29 @@ h2 {
     font-size: 3rem;
     text-shadow: 3px 3px 0 var(--background);
 }
+.fade-in-left {
+	animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+ @keyframes fade-in-left {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
 /*///////////////////PARALLAX/////////////////*/
 .parallax {
     background: var(--background) fixed no-repeat 50% 50%;
-    background-image: url('./assets/software.png');
+    background-image: var(--parallax);
     background-size: cover;
 }
 
 /*///////////////////NAVBAR///////////////////*/
 .header-container {
+    z-index: 1;
     position: fixed;
     width: 100%;
     top: 0;
@@ -51,6 +73,7 @@ h2 {
     background-color: var(--background);
     color: var(--paragraph);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    overflow: hidden;
 }
 .logo {
     display: flex;
@@ -79,10 +102,13 @@ h2 {
 
 /*///////////////////PRESENTATION///////////////////*/
 .presentation {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 3.3rem 1rem;
+    overflow: hidden;
 }
+  
 .presentation h1 {
     margin: 7rem 0 0.5rem 0;
     color: var(--title);
@@ -105,10 +131,12 @@ h2 {
     cursor: pointer;
     align-self: flex-end;
 }
+
 /*///////////////////SERVICES///////////////////*/
 .services {
     padding: 1rem;
-    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    position: relative;
+    overflow: hidden;
 }
 .services div {
     display: flex;
@@ -133,6 +161,15 @@ h2 {
 .service-card p {
     color: var(--paragraph);
 }
+.services-triangle {
+    position: absolute;
+    z-index: -1;
+    transform: rotate(112deg) scale(100%) translateX(32%) translateY(70%);
+    width: 900px;
+    height: 700px;
+    background-color: var(--button);
+
+}
 /*///////////////////ABOUT///////////////////*/
 .about {
     padding: 1rem;
@@ -151,6 +188,8 @@ h2 {
 /*///////////////////WORK///////////////////*/
 .work {
     padding: 1rem;
+    position: relative;
+    overflow: hidden;
 }
 .work div {
     display: flex;
@@ -168,6 +207,17 @@ h2 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
 } */
+.work-triangle {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 600px;
+    transform: rotate(29deg) translateY(-200px) translateX(50px) scale(100%);
+    background-color: var(--button);
+}
 /*///////////////////FORM///////////////////*/
 .form-container {
     padding: 10rem 1rem 2.2rem 1rem;
