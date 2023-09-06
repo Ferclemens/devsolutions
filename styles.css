@@ -6,7 +6,7 @@
     --background: #16161a;
     --secondary: #3f4044;
     --tertiary: #2cb67d;
-    --button: #7f5af0;
+    --button: #3458ce;
     --paragraph: #94a1b2;
     --title: #fffffe;
     --parallax: url('./assets/software.png');
@@ -61,7 +61,7 @@ h2 {
 }
 /*///////////////////NAVBAR///////////////////*/
 .header-container {
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     width: 100%;
     top: 0;
@@ -105,39 +105,47 @@ h2 {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 3.3rem 1rem;
+    padding: 2rem 4rem;
     overflow: hidden;
+}
+.mono-gradient {
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(22,22,26,1) 0%, rgba(51,51,54,1) 69%);
-    z-index: -2;
 }
-  
+span {
+    color: var(--tertiary);
+    border-bottom: 5px solid var(--tertiary);
+}  
 .presentation h1 {
     margin: 7rem 0 0.5rem 0;
     color: var(--title);
     font-size: 3rem;
     text-shadow: 3px 3px 0 var(--background);
+    z-index: 2;
 }
 .presentation p {
     color: var(--title);
     font-size: 1.5rem;
     text-shadow: 1.5px 1.5px 0 var(--background);
+    z-index: 2;
 }
 .action-button {
     text-decoration: none;
-    color: var(--background);
+    color: var(--title);
+    text-shadow: 2px 2px 0 var(--background);
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    border-radius: 5px;
-    padding: 8px 10px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin-right: 20%;
     background-color: var(--tertiary);
     width: fit-content;
     cursor: pointer;
     align-self: flex-end;
+    z-index: 2;
 }
 .presentation-triangle {
     position: absolute;
     right: 0;
-    z-index: -1;
     transform: rotate(-65deg) scale(150%) translateX(58%) translateY(0%);
     width: 500px;
     height: 600px;
@@ -308,6 +316,13 @@ footer {
     }
     .presentation-triangle {
         transform: rotate(-45deg) scale(150%) translateX(58%) translateY(0%);
+    }
+    .action-button {
+        align-self: center;
+        margin-right: 0;
+        padding: 15px 20px;
+        font-size: 1.5rem;
+
     }
     /*----------------Services----------------*/
     .services div {
